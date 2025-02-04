@@ -34,3 +34,9 @@ body{
     justify-content: center;
     flex-direction: column;
 }
+.select{
+    width: 200px;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 10px;
+}

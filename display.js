@@ -21,7 +21,6 @@ function adicionar() {
 
 function mostrar() {
     lista.sort((a, b) => a - b); 
-    var exibir = lista;
     var verificar = lista.length;
     var last = lista[lista.length - 1];
     var first = lista[0];
@@ -30,20 +29,25 @@ function mostrar() {
         soma += lista[pos];
     }
     var dividendo = lista.length;
-    var media = soma/dividendo;
-    //adicionar nova variavél com funcionalidade com base em lista
+    var media = soma / dividendo;
+
     var info_valor = document.getElementById("info_valor");
     var quantidade = document.getElementById("quantidade");
-    var menor_valor =  document.getElementById("menor_valor");
+    var menor_valor = document.getElementById("menor_valor");
     var soma_valores = document.getElementById("soma_valores");
     var média_dos_valores = document.getElementById("média_dos_valores");
-    var lista_valores = document.getElementById("verificar");
-    //adicionar nova variavél com id do html
+
     quantidade.textContent = `Elementos Digitados: ${verificar}`;
-    info_valor.textContent = `O ultimo valor da lista é ${last}`;
+    info_valor.textContent = `O último valor da lista é ${last}`;
     menor_valor.textContent = `O menor valor da lista é ${first}`;
     soma_valores.textContent = `A soma dos valores é ${soma}`;
     média_dos_valores.textContent = `A média dos valores é ${media}`;
-    lista_valores.textContent = `Os valores digitados foram: ${exibir}`;
 
+    var lista_valores = document.getElementById("flista");
+    lista_valores.innerHTML = ""; // Limpa a lista antes de adicionar os valores
+    for (let i = 0; i < lista.length; i++) {
+        let option = document.createElement("option");
+        option.text = lista[i];
+        lista_valores.add(option);
+    }
 }
